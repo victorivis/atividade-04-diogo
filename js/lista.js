@@ -24,23 +24,10 @@ function adicionarItem(item){
     }
 }
 
-function removerItem(item){
-    let listaLoja = receberListaLoja();
-    let posicao = listaLoja.findIndex(objeto => objeto.nome == item.nome && objeto.preco == item.preco && objeto.comprado == item.comprado);
-    console.log("posição removerItem: ", posicao);
-    if(posicao != -1){
-        listaLoja.splice(posicao, 1);
-        preencherListaLoja(listaLoja);
-    }
-    else{
-        console.log("Remoção impossível");
-    }
-}
-
 let arroz = {nome: "arroz (1kg)", preco: 10.2, comprado: false};
 let feijao = {nome: "feijão (1kg)", preco: 12.5, comprado: false};
 
-function removerItemPorPosicao(posicao){
+function removerItem(posicao){
     let listaLoja = receberListaLoja();
     if(posicao!=-1 && posicao < listaLoja.length){
         listaLoja.splice(posicao, 1);
@@ -60,4 +47,4 @@ function marcarItem(posicao){
     }
 }
 
-export{receberListaLoja, preencherListaLoja, adicionarItem, removerItem, removerItemPorPosicao, marcarItem};
+export{receberListaLoja, preencherListaLoja, adicionarItem, removerItem, marcarItem};
